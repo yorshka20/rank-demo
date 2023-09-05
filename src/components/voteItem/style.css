@@ -1,0 +1,23 @@
+.vote-item {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  user-select: none;
+}
+
+.vote-item img {
+  width: 40px;
+  height: 40px;
+
+  cursor: pointer;
+}
+
+.vote-item span {
+  font-size: 24px;
+  font-weight: 500;
+
+  align-self: flex-start;
+}

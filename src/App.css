@@ -1,0 +1,39 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+
+  box-sizing: border-box;
+  padding: 0 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header {
+  color: #000;
+  align-self: center;
+
+  margin-bottom: 5px;
+}
+
+.divider {
+  display: block;
+
+  width: 80vw;
+  height: 2px;
+
+  margin-bottom: 40px;
+
+  background-color: rgb(233, 233, 233);
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  width: 80vw;
+}
