@@ -1,3 +1,4 @@
+import React from "react";
 import "./style.css";
 
 interface VoteProps {
@@ -6,11 +7,11 @@ interface VoteProps {
   updateVote: (id: number, vote: number) => void;
 }
 
-export function Vote({ id, voteCount, updateVote }: VoteProps) {
+export const Vote = React.memo(({ id, voteCount, updateVote }: VoteProps) => {
   const handleVoteCount = () => {
     updateVote(id, voteCount + 1);
   };
-
+  console.log("vote change");
   return (
     <div className={"vote-item"}>
       <img
@@ -25,4 +26,4 @@ export function Vote({ id, voteCount, updateVote }: VoteProps) {
       </span>
     </div>
   );
-}
+});

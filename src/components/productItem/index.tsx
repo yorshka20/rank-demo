@@ -18,29 +18,20 @@ export const ProductItem = React.memo((props: ProductItemProps) => {
 
   console.log("rerender productItem: ", product.title, product.votes);
 
-  const {
-    productImageUrl,
-    votes,
-    title,
-    description,
-    url,
-    submitterAvatarUrl,
-  } = product;
-
   return (
     <div data-testid={`product-item-${id}`} className={"product-item"}>
-      <img className={"product-image"} src={productImageUrl} alt="" />
+      <img className={"product-image"} src={product.productImageUrl} alt="" />
       <div className={"product-info"}>
-        <Vote id={id} voteCount={votes} updateVote={updateVote} />
+        <Vote id={id} voteCount={product.votes} updateVote={updateVote} />
         <div className={"product-content"}>
-          <a className={"title"} href={url}>
-            {title}
+          <a className={"title"} href={product.url}>
+            {product.title}
           </a>
-          <p>{description}</p>
+          <p>{product.description}</p>
         </div>
         <div className={"product-author"}>
           <span className={"submitted"}>Submitted by:</span>
-          <img className={"author"} src={submitterAvatarUrl} alt="" />
+          <img className={"author"} src={product.submitterAvatarUrl} alt="" />
         </div>
       </div>
     </div>

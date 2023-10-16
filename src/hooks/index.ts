@@ -15,15 +15,13 @@ import { arrayEquals } from "../utils";
 export function useProductStore() {
   // in real environment, this store should be initialized by request data.
   // and may be connected with the global store like redux.
-  const productStore = useMemo(() => {
+  return useMemo(() => {
     const storage = new Map<number, ProductType>();
     for (const product of products) {
       storage.set(product.id, product);
     }
     return storage;
   }, []);
-
-  return productStore;
 }
 
 /**

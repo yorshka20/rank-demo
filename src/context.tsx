@@ -12,8 +12,7 @@ const ProductContext = React.createContext<ProductContextType>(
 );
 
 export function useProductContext() {
-  const context = useContext(ProductContext);
-  return context;
+  return useContext(ProductContext);
 }
 
 type ContextProps = {
