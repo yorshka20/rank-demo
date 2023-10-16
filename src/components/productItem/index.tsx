@@ -1,6 +1,5 @@
 import React from "react";
-import { useSubscribeProductItem } from "../../hooks";
-import type { UpdateVoteType } from "../../types";
+import type { ProductType, UpdateVoteType } from "../../types";
 import { Vote } from "../voteItem";
 
 import "./style.css";
@@ -8,13 +7,14 @@ import "./style.css";
 interface ProductItemProps {
   id: number;
   updateVote: UpdateVoteType;
+  getProductInfo: (id: number) => ProductType;
 }
 
 export const ProductItem = React.memo((props: ProductItemProps) => {
-  const { id, updateVote } = props;
+  const { id, updateVote, getProductInfo } = props;
 
-  // get the latest snapshot of `productInfo` from this hook.
-  const product = useSubscribeProductItem(id);
+  // get product info from the context
+  const product = getProductInfo(id);
 
   console.log("rerender productItem: ", product.title, product.votes);
 
