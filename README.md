@@ -75,6 +75,8 @@ To achieve this meticulous rendering control, we need:
 - a method to let each component rerender itself independently.
 - a more simple and product-info-free way to maintain the rank of product list.
 
+_It's necessary to stress that if we want a component to rerender itself independently, then we **will not** make it a `pure/stateless component` because the component should take control of itself. This design somewhat disobeys the principle of what is considered a correct way to design a component, but I think it not that bad since we are aiming at achieving such a meticulous rendering control._
+
 After several attempts and modifications, I designed the following routine for handling the feature:
 
 ![routine](./images/routine.png)
