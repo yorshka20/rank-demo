@@ -1,22 +1,19 @@
 import React from "react";
-import type { ProductType, UpdateVoteType } from "../../types";
+import type { UpdateVoteType } from "../../types";
 import { Vote } from "../voteItem";
 
+import { useSubscribeProductItem } from "../../hooks";
 import "./style.css";
 
 interface ProductItemProps {
   id: number;
   updateVote: UpdateVoteType;
-  getProductInfo: (id: number) => ProductType;
 }
 
 export const ProductItem = React.memo((props: ProductItemProps) => {
-  const { id, updateVote, getProductInfo } = props;
+  const { id, updateVote } = props;
 
-  // get product info from the context
-  const product = getProductInfo(id);
-
-  console.log("rerender productItem: ", product.title, product.votes);
+  const product = useSubscribeProductItem(id);
 
   return (
     <div data-testid={`product-item-${id}`} className={"product-item"}>

@@ -11,7 +11,7 @@ export const Vote = React.memo(({ id, voteCount, updateVote }: VoteProps) => {
   const handleVoteCount = () => {
     updateVote(id, voteCount + 1);
   };
-  console.log("vote change");
+
   return (
     <div className={"vote-item"}>
       <img

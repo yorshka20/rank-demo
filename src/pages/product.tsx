@@ -8,24 +8,10 @@ export function ProductPage() {
   // Notice: the rankList is a number array which only contains the product.id.
   const [rankList, updateVote] = useProductRankList();
 
-  const { productStore } = useProductContext();
-
-  const getProductInfo = useCallback(
-    (id: number) => {
-      return productStore.get(id)!;
-    },
-    [productStore]
-  );
-
   return (
     <div data-testid="product-list" className={"product-list"}>
       {rankList.map((product) => (
-        <ProductItem
-          getProductInfo={getProductInfo}
-          updateVote={updateVote}
-          id={product}
-          key={product}
-        />
+        <ProductItem updateVote={updateVote} id={product} key={product} />
       ))}
     </div>
   );
